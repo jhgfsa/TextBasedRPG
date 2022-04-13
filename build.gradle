@@ -8,7 +8,7 @@ apply plugin: 'application'
 apply plugin: 'jacoco'
 
 
-mainClassName = 'Main'
+mainClassName = 'main.java.Main'
 
 
 
