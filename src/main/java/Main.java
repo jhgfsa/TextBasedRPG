@@ -1,7 +1,6 @@
 package main.java;
 
 import characterbuilder.java.Character;
-import enemyfactory.java.Enemy;
 
 public class Main {
 
@@ -19,13 +18,7 @@ public class Main {
 
         Character character = Generation.generateCharacter();
 
-        System.out.println("\n\nNow entering the Imperial Citadel, Floor 1...");
-
-        Enemy enemy = Generation.generateEnemy(floor);
-
-        String test = enemy.getName();
-
-        System.out.println("You enter floor " + floor + " and encounter " + test + "!");
+        Gameplay.play(character);
 
     }
 }

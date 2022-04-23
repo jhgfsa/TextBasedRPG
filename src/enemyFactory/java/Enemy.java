@@ -14,6 +14,8 @@ public abstract class Enemy {
 
     public abstract int getForce();
 
+    public abstract int getSpeed();
+
     public abstract int getExp();
 
     public abstract int getCredits();

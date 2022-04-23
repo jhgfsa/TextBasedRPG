@@ -41,8 +41,8 @@ public class Generation {
         // medium enemy generated every 5 floors
         if (floor == 5) {
 
-            int minDamage = 25;
-            int maxDamage = 50;
+            int minDamage = 30;
+            int maxDamage = 35;
             damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
             int minSpeed = 25;
@@ -65,7 +65,7 @@ public class Generation {
         if (floor == 10) {
 
             int minDamage = 25;
-            int maxDamage = 50;
+            int maxDamage = 45;
             damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
             int minSpeed = 25;
@@ -86,8 +86,8 @@ public class Generation {
 
         else {
 
-            int minDamage = 25;
-            int maxDamage = 50;
+            int minDamage = 10;
+            int maxDamage = 15;
             damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
             int minSpeed = 25;
