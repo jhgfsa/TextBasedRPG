@@ -1,6 +1,7 @@
 package main.java;
 
 import characterbuilder.java.Character;
+import enemyfactory.java.Enemy;
 
 public class Main {
 
@@ -10,6 +11,7 @@ public class Main {
     static String armor;
     static String pants;
     static String boots;
+    static int floor = 1;
 
     public static void main(String[] args) {
         System.out.println("Welcome to STAR WARS");
@@ -18,6 +20,12 @@ public class Main {
         Character character = Generation.generateCharacter();
 
         System.out.println("\n\nNow entering the Imperial Citadel, Floor 1...");
+
+        Enemy enemy = Generation.generateEnemy(floor);
+
+        String test = enemy.getName();
+
+        System.out.println("You enter floor " + floor + " and encounter " + test + "!");
 
     }
 }

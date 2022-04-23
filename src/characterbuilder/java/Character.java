@@ -16,7 +16,7 @@ public class Character {
     private int speed;
     private int exp;
     private int level;
-    private int money;
+    private int credits;
     private String status;
 
     public Character(CharacterBuilder builder) {
@@ -34,7 +34,7 @@ public class Character {
         this.speed = builder.speed;
         this.exp = builder.exp;
         this.level = builder.level;
-        this.money = builder.money;
+        this.credits = builder.credits;
         this.status = builder.status;
     }
 
@@ -151,11 +151,11 @@ public class Character {
     }
 
     public int getMoney() {
-        return money;
+        return credits;
     }
 
     public void setMoney(int money) {
-        this.money = money;
+        this.credits = money;
     }
 
     public String getStatus() {
@@ -189,7 +189,7 @@ public class Character {
         private int speed;
         private int exp;
         private int level;
-        private int money;
+        private int credits;
         private String status;
 
         public CharacterBuilder(String role) {
@@ -278,9 +278,9 @@ public class Character {
             return this;
         }
 
-        public CharacterBuilder money(int money) {
+        public CharacterBuilder credits(int credits) {
 
-            this.money = money;
+            this.credits = credits;
             return this;
         }
 
