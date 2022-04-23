@@ -1,6 +1,6 @@
 package main.java;
 
-import bosssingleton.FinalBoss;
+import bosssingleton.java.FinalBoss;
 import enemyfactory.java.Enemy;
 
 public class Gameplay {
