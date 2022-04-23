@@ -1,5 +1,6 @@
 package main.java;
 
+import bosssingleton.FinalBoss;
 import enemyfactory.java.Enemy;
 
 public class Gameplay {
@@ -63,10 +64,45 @@ public class Gameplay {
         }
 
         else if (floor == 11) {
-            System.out.println("\nYou got to floor 11! YOU WIN!!!");
+
+            System.out.println(
+                    "\nYou have reached Floor 11 of the Imperial Citadel, the throne room awaits! You enter slowly and find The Emperor waiting for you.");
+
+            FinalBoss finalBoss = FinalBoss.getInstance();
+
+            System.out.println("\n He calls out to you and speaks:");
+            finalBoss.sayIntroPhrase();
+
+            System.out.println("\n Battle begins!!!");
+
+            int finalBossRemainingHealth = FinalBoss.getHP();
+
+            while (character.getHP() > 0 && finalBossRemainingHealth > 0) {
+
+                int remainingPlayerHealth = character.getHP() - FinalBoss.getDamage();
+
+                character.setHP(remainingPlayerHealth);
+
+                System.out.println("The Emperor attacks you for " + FinalBoss.getDamage() + " damage and you have "
+                        + character.getHP() + " health left.");
+
+                finalBossRemainingHealth = finalBossRemainingHealth - character.getPhysicalDmg();
+                System.out.println("You attacked The Emperor for " + character.getPhysicalDmg()
+                        + " damage! They now have " + finalBossRemainingHealth + " health left!");
+
+            }
 
         }
 
+        if (character.getHP() < 0) {
+
+            System.out.println("You have fallen to the Emperor... all hope is lost!");
+        }
+
+        else {
+
+            System.out.println("You have vanquished The Emperor! You have restored balance to the force!");
+        }
     }
 
 }
