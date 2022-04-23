@@ -3,7 +3,7 @@ package enemyfactory.java;
 public class MediumEnemy extends Enemy {
 
     String name;
-    String[] drops;
+
     int physicalDmg;
     int specialDmg;
     int HP;
@@ -12,11 +12,11 @@ public class MediumEnemy extends Enemy {
     int exp;
     int credits;
 
-    public MediumEnemy(String name, String[] drops, int physicalDmg, int specialDmg, int HP, int force, int speed,
-            int exp, int credits) {
+    public MediumEnemy(String name, int physicalDmg, int specialDmg, int HP, int force, int speed, int exp,
+            int credits) {
 
         this.name = name;
-        this.drops = drops;
+
         this.physicalDmg = physicalDmg;
         this.specialDmg = specialDmg;
         this.HP = HP;
@@ -38,14 +38,6 @@ public class MediumEnemy extends Enemy {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String[] getDrops() {
-        return drops;
-    }
-
-    public void setDrops(String[] drops) {
-        this.drops = drops;
     }
 
     public int getPhysicalDmg() {

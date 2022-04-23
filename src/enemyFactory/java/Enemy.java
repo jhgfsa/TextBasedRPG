@@ -6,8 +6,6 @@ public abstract class Enemy {
 
     public abstract String getName();
 
-    public abstract String[] getDrops();
-
     public abstract int getPhysicalDmg();
 
     public abstract int getSpecialDmg();

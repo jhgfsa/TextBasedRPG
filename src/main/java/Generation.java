@@ -25,16 +25,38 @@ public class Generation {
     private static int credits = 0;
     private static int level = 1;
     private static int exp = 0;
+    private static int damage;
+    private final static int smallEnemyHealth = 30;
+    private final static int mediumEnemyHealth = 60;
+    private final static int bossEnemyHealth = 90;
+    private final static int smallExp = 25;
+    private final static int mediumExp = 50;
+    private final static int bossExp = 100;
+    private static int force = 0;
 
     static Random r = new Random();
 
     public static Enemy generateEnemy(int floor) {
 
+        // medium enemy generated every 5 floors
         if (floor == 5) {
+
+            int minDamage = 25;
+            int maxDamage = 50;
+            damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
+
+            int minSpeed = 25;
+            int maxSpeed = 60;
+            int speed = (int) Math.floor(Math.random() * (maxSpeed - minSpeed + 1) + minSpeed);
+
+            int minCredits = 0;
+            int maxCredits = 50;
+            int credits = (int) Math.floor(Math.random() * (maxCredits - minCredits + 1) + minCredits);
 
             String result = mediumEnemyList[r.nextInt(mediumEnemyList.length)];
 
-            Enemy enemy = EnemyFactory.createEnemy("Medium", result, speciesList, 0, 0, 0, 0, 0, 0, 0);
+            Enemy enemy = EnemyFactory.createEnemy("Medium", result, damage, damage, mediumEnemyHealth, force, speed,
+                    mediumExp, credits);
 
             return enemy;
 
@@ -42,19 +64,44 @@ public class Generation {
 
         if (floor == 10) {
 
-            String result = bossEnemyList[r.nextInt(mediumEnemyList.length)];
+            int minDamage = 25;
+            int maxDamage = 50;
+            damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
-            Enemy enemy = EnemyFactory.createEnemy("Medium", result, speciesList, 0, 0, 0, 0, 0, 0, 0);
+            int minSpeed = 25;
+            int maxSpeed = 60;
+            int speed = (int) Math.floor(Math.random() * (maxSpeed - minSpeed + 1) + minSpeed);
+
+            int minCredits = 0;
+            int maxCredits = 50;
+            int credits = (int) Math.floor(Math.random() * (maxCredits - minCredits + 1) + minCredits);
+
+            String result = bossEnemyList[r.nextInt(bossEnemyList.length)];
+
+            Enemy enemy = EnemyFactory.createEnemy("Boss", result, damage, damage, bossEnemyHealth, force, speed,
+                    bossExp, credits);
 
             return enemy;
-
         }
 
         else {
 
-            String result = smallEnemyList[r.nextInt(mediumEnemyList.length)];
+            int minDamage = 25;
+            int maxDamage = 50;
+            damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
-            Enemy enemy = EnemyFactory.createEnemy("Medium", result, speciesList, 0, 0, 0, 0, 0, 0, 0);
+            int minSpeed = 25;
+            int maxSpeed = 60;
+            int speed = (int) Math.floor(Math.random() * (maxSpeed - minSpeed + 1) + minSpeed);
+
+            int minCredits = 0;
+            int maxCredits = 50;
+            int credits = (int) Math.floor(Math.random() * (maxCredits - minCredits + 1) + minCredits);
+
+            String result = smallEnemyList[r.nextInt(smallEnemyList.length)];
+
+            Enemy enemy = EnemyFactory.createEnemy("Small", result, damage, damage, smallEnemyHealth, force, speed,
+                    smallExp, credits);
 
             return enemy;
 
