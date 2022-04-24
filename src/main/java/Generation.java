@@ -18,7 +18,6 @@ public class Generation {
     static String[] bossEnemyList = { "Darth Maul", "Darth Vader", "Boba Fett", "Count Dooku", "General Grevious",
             "Ventress", "Tarkin", "IG-88", "Grand Admiral Thrawn" };
 
-    String result;
     static boolean NakedCharacter;
     static boolean CharacterJedi;
     static String helmet;
@@ -236,6 +235,9 @@ public class Generation {
             weapon = "Dual Blaster";
             break;
 
+        default:
+            weapon = "Blaster";
+
         }
 
         return weapon;
@@ -323,6 +325,9 @@ public class Generation {
             HP = 220;
             break;
 
+        default:
+            HP = 150;
+
         }
 
         return HP;
@@ -399,6 +404,9 @@ public class Generation {
         case "Hutt":
             speed = 25;
             break;
+
+        default:
+            speed = 50;
 
         }
 

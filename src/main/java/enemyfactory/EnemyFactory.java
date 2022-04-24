@@ -5,7 +5,7 @@ public class EnemyFactory {
     public static Enemy createEnemy(String type, String name, int physicalDmg, int specialDmg, int HP, int force,
             int speed, int exp, int credits) {
 
-        if (type.equals(null) || type.isEmpty()) {
+        if (type.isEmpty()) {
 
             return null;
         }
