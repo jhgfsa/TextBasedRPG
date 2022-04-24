@@ -27,7 +27,7 @@ public class Main {
         // 1 to level up
         // there is also enemy scaling with normal gameplay as it is based off player
         // level but in this demo you never level up so enemies dont scale
-        character.setHP(3000);
+        character.setHp(3000);
 
         // playing this uses the final boss singleton design pattern and the enemy
         // builder

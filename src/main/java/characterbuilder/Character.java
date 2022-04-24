@@ -3,7 +3,7 @@ package main.java.characterbuilder;
 // TODO: Auto-generated Javadoc
 /**
  * The character class is the builder design pattern with a characterbuilder to
- * make character objects with optional initalization variables
+ * make character objects with optional initalization variables.
  */
 public class Character {
 
@@ -29,7 +29,7 @@ public class Character {
     private String boots;
 
     /** The hp. */
-    private int HP;
+    private int healthPoints;
 
     /** The force. */
     private int force;
@@ -68,7 +68,7 @@ public class Character {
         this.armor = builder.armor;
         this.pants = builder.pants;
         this.boots = builder.boots;
-        this.HP = builder.HP;
+        this.healthPoints = builder.healthPoints;
         this.force = builder.force;
         this.physicalDmg = builder.physicalDmg;
         this.specialDmg = builder.specialDmg;
@@ -210,17 +210,17 @@ public class Character {
      *
      * @return the hp
      */
-    public int getHP() {
-        return HP;
+    public int getHp() {
+        return healthPoints;
     }
 
     /**
      * Sets the hp.
      *
-     * @param hP the new hp
+     * @param healthPoints the new hp
      */
-    public void setHP(int hP) {
-        HP = hP;
+    public void setHp(int healthPoints) {
+        this.healthPoints = healthPoints;
     }
 
     /**
@@ -406,7 +406,7 @@ public class Character {
         private String boots;
 
         /** The hp. */
-        private int HP;
+        private int healthPoints;
 
         /** The force. */
         private int force;
@@ -518,14 +518,14 @@ public class Character {
         }
 
         /**
-         * Hp.
+         * healthPoints.
          *
-         * @param HP the hp
+         * @param healthPoints the hp
          * @return the character builder
          */
-        public CharacterBuilder HP(int HP) {
+        public CharacterBuilder healthPoints(int healthPoints) {
 
-            this.HP = HP;
+            this.healthPoints = healthPoints;
             return this;
         }
 

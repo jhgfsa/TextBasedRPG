@@ -40,7 +40,7 @@ public abstract class Enemy {
      *
      * @return the hp
      */
-    public abstract int getHP();
+    public abstract int getHp();
 
     /**
      * Gets the force.

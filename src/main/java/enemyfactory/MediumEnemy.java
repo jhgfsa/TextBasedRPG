@@ -2,7 +2,7 @@ package main.java.enemyfactory;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class MediumEnemy is extended from enemy and used in the enemy factory
+ * The Class MediumEnemy is extended from enemy and used in the enemy factory.
  */
 public class MediumEnemy extends Enemy {
 
@@ -16,7 +16,7 @@ public class MediumEnemy extends Enemy {
     int specialDmg;
 
     /** The hp. */
-    int HP;
+    int healthPoints;
 
     /** The force. */
     int force;
@@ -33,23 +33,22 @@ public class MediumEnemy extends Enemy {
     /**
      * Instantiates a new medium enemy.
      *
-     * @param name        the name
-     * @param physicalDmg the physical dmg
-     * @param specialDmg  the special dmg
-     * @param HP          the hp
-     * @param force       the force
-     * @param speed       the speed
-     * @param exp         the exp
-     * @param credits     the credits
+     * @param name         the name
+     * @param physicalDmg  the physical dmg
+     * @param specialDmg   the special dmg
+     * @param healthPoints the hp
+     * @param force        the force
+     * @param speed        the speed
+     * @param exp          the exp
+     * @param credits      the credits
      */
-    public MediumEnemy(String name, int physicalDmg, int specialDmg, int HP, int force, int speed, int exp,
-            int credits) {
+    public MediumEnemy(String name, int physicalDmg, int specialDmg, int healthPoints, int force, int speed, int exp, int credits) {
 
         this.name = name;
 
         this.physicalDmg = physicalDmg;
         this.specialDmg = specialDmg;
-        this.HP = HP;
+        this.healthPoints = healthPoints;
         this.force = force;
         this.speed = speed;
         this.exp = exp;
@@ -126,17 +125,17 @@ public class MediumEnemy extends Enemy {
      *
      * @return the hp
      */
-    public int getHP() {
-        return HP;
+    public int getHp() {
+        return healthPoints;
     }
 
     /**
      * Sets the hp.
      *
-     * @param hP the new hp
+     * @param healthPoints the new hp
      */
-    public void setHP(int hP) {
-        HP = hP;
+    public void setHp(int healthPoints) {
+        this.healthPoints = healthPoints;
     }
 
     /**

@@ -6,7 +6,7 @@ import main.java.enemyfactory.Enemy;
 // 
 /**
  * The Class Gameplay contains the play method which is the main game flow of
- * this project
+ * this project.
  */
 public class Gameplay {
 
@@ -42,75 +42,71 @@ public class Gameplay {
      * them.
      *
      * @param character the character
-     * @return void
+     * 
      */
     public static void play(main.java.characterbuilder.Character character) {
 
-        maxHP = character.getHP();
+        maxHP = character.getHp();
 
         System.out.println("\n\nNow entering the Imperial Citadel, Floor 1...");
 
-        while (character.getHP() > 0 && floor != 50) {
+        while (character.getHp() > 0 && floor != 50) {
 
             Enemy enemy = Generation.generateEnemy(floor);
             String enemyName = enemy.getName();
-            int remainingEnemyHealth = enemy.getHP();
+            int remainingEnemyHealth = enemy.getHp();
 
             System.out.println("\nYou enter floor " + floor + " and encounter " + enemyName + "!");
 
             floor++;
 
-            while (character.getHP() > 0 && remainingEnemyHealth > 0) {
+            while (character.getHp() > 0 && remainingEnemyHealth > 0) {
 
                 if (character.getSpeed() >= enemy.getSpeed()) {
 
                     remainingEnemyHealth = remainingEnemyHealth - character.getPhysicalDmg();
-                    System.out.println("You attacked " + enemy.getName() + " for " + character.getPhysicalDmg()
-                            + " damage! They now have " + remainingEnemyHealth + " health left!");
+                    System.out.println("You attacked " + enemy.getName() + " for " + character.getPhysicalDmg() + " damage! They now have " + remainingEnemyHealth + " health left!");
 
-                    int remainingPlayerHealth = character.getHP() - enemy.getPhysicalDmg();
+                    int remainingPlayerHealth = character.getHp() - enemy.getPhysicalDmg();
                     remainingPlayerHealth = remainingPlayerHealth - character.getLevel() / 2;
                     int bossDamage = enemy.getPhysicalDmg() + character.getLevel() / 2;
 
-                    character.setHP(remainingPlayerHealth);
+                    character.setHp(remainingPlayerHealth);
 
-                    System.out.println(enemy.getName() + " attacked you for " + bossDamage + " damage and you now have "
-                            + character.getHP() + " health remaining!");
+                    System.out.println(enemy.getName() + " attacked you for " + bossDamage + " damage and you now have " + character.getHp() + " health remaining!");
 
                 }
 
                 if (character.getSpeed() <= enemy.getSpeed()) {
 
-                    int remainingPlayerHealth = character.getHP() - enemy.getPhysicalDmg();
+                    int remainingPlayerHealth = character.getHp() - enemy.getPhysicalDmg();
                     remainingPlayerHealth = remainingPlayerHealth - character.getLevel() / 2;
                     int bossDamage = enemy.getPhysicalDmg() + character.getLevel() / 2;
 
-                    character.setHP(remainingPlayerHealth);
+                    character.setHp(remainingPlayerHealth);
 
-                    System.out.println(enemy.getName() + " attacked you for " + bossDamage + " and you now have "
-                            + character.getHP() + " health remaining!");
+                    System.out.println(enemy.getName() + " attacked you for " + bossDamage + " and you now have " + character.getHp() + " health remaining!");
 
                     remainingEnemyHealth = remainingEnemyHealth - character.getPhysicalDmg();
-                    System.out.println("You attacked " + enemy.getName() + " for " + character.getPhysicalDmg()
-                            + " damage! They now have " + remainingEnemyHealth + " health left!");
+                    System.out.println("You attacked " + enemy.getName() + " for " + character.getPhysicalDmg() + " damage! They now have " + remainingEnemyHealth + " health left!");
 
                 }
 
             }
 
-            if (character.getHP() <= 0 && enemy.getHP() > 0) {
+            if (character.getHp() <= 0 && enemy.getHp() > 0) {
 
                 System.out.println("\nYou lost... you have returned to the 1st floor and lost 20 experience points");
                 character.setExp(character.getExp() - 20);
                 floor = 1;
-                character.setHP(maxHP);
+                character.setHp(maxHP);
             }
 
-            if (character.getHP() <= 0 && enemy.getHP() <= 0) {
+            if (character.getHp() <= 0 && enemy.getHp() <= 0) {
 
                 System.out.println("\nYou knocked each other out! Before he rises, you sneak back to the 1st floor");
                 floor = 1;
-                character.setHP(maxHP);
+                character.setHp(maxHP);
             }
 
             int xpRecieved = character.getExp() + enemy.getExp();
@@ -118,23 +114,22 @@ public class Gameplay {
             character.setExp(xpRecieved);
 
             System.out.println("\nYou won! You gained " + enemy.getExp() + " experience points");
-            System.out.println("You have " + character.getExp() + " experience points and need " + expNeeded
-                    + " experience points to level up!");
+            System.out.println("You have " + character.getExp() + " experience points and need " + expNeeded + " experience points to level up!");
 
-            currentHP = character.getHP();
+            currentHP = character.getHp();
 
             if (currentHP <= 0.15 * maxHP && currentHP > 0) {
 
                 System.out.println("\n You're below 15% health! You go back to the 1st floor to heal");
                 floor = 1;
-                character.setHP(maxHP);
+                character.setHp(maxHP);
 
             }
 
             if (character.getExp() > expNeeded && floor == 1) {
 
                 expNeeded *= 1.5;
-                newHP = character.getHP() + 25;
+                newHP = character.getHp() + 25;
 
                 if (character.getRole().equals("Jedi")) {
                     newForce = character.getForce() + 25;
@@ -147,29 +142,28 @@ public class Gameplay {
                 characterLevel++;
 
                 character.setLevel(characterLevel);
-                character.setHP(newHP);
+                character.setHp(newHP);
                 character.setForce(newForce);
                 character.setSpecialDmg(newSpecialDmg);
                 character.setSpeed(newSpeed);
-                maxHP = character.getHP();
+                maxHP = character.getHp();
 
-                System.out.println("\n You leveled up! You're now " + characterLevel
-                        + " and your new stats are: \n Health: " + newHP + "\n Force:  " + newForce
-                        + "\n Special Damage: " + newSpecialDmg + "\n Speed: " + newSpeed);
+                System.out.println("\n You leveled up! You're now " + characterLevel + " and your new stats are: \n Health: " + newHP + "\n Force:  " + newForce + "\n Special Damage: "
+                                                                                                                                                                                    + newSpecialDmg
+                                                                                                                                                                                    + "\n Speed: "
+                                                                                                                                                                                    + newSpeed);
 
             }
 
         }
 
-        if (character.getHP() < 0) {
+        if (character.getHp() < 0) {
 
             System.out.println("\nYou died!!");
-        }
 
-        else if (floor == 50) {
+        } else if (floor == 50) {
 
-            System.out.println(
-                    "\nYou have reached Floor 50 of the Imperial Citadel, the throne room awaits! You enter slowly and find The Emperor waiting for you.");
+            System.out.println("\nYou have reached Floor 50 of the Imperial Citadel, the throne room awaits! You enter slowly and find The Emperor waiting for you.");
 
             FinalBoss finalBoss = FinalBoss.getInstance();
 
@@ -178,32 +172,29 @@ public class Gameplay {
 
             System.out.println("\nBattle begins!!!");
 
-            int finalBossRemainingHealth = FinalBoss.getHP();
+            int finalBossRemainingHealth = FinalBoss.getHp();
 
-            while (character.getHP() > 0 && finalBossRemainingHealth > 0) {
+            while (character.getHp() > 0 && finalBossRemainingHealth > 0) {
 
-                int remainingPlayerHealth = character.getHP() - FinalBoss.getDamage() - character.getLevel() / 2;
+                int remainingPlayerHealth = character.getHp() - FinalBoss.getDamage() - character.getLevel() / 2;
                 int bossDamage = FinalBoss.getDamage() + character.getLevel() / 2;
 
-                character.setHP(remainingPlayerHealth);
+                character.setHp(remainingPlayerHealth);
 
-                System.out.println("\nThe Emperor attacks you for " + bossDamage + " damage and you have "
-                        + character.getHP() + " health left.");
+                System.out.println("\nThe Emperor attacks you for " + bossDamage + " damage and you have " + character.getHp() + " health left.");
 
                 finalBossRemainingHealth = finalBossRemainingHealth - character.getPhysicalDmg();
-                System.out.println("You attacked The Emperor for " + character.getPhysicalDmg()
-                        + " damage! They now have " + finalBossRemainingHealth + " health left!");
+                System.out.println("You attacked The Emperor for " + character.getPhysicalDmg() + " damage! They now have " + finalBossRemainingHealth + " health left!");
 
             }
 
         }
 
-        if (character.getHP() <= 0) {
+        if (character.getHp() <= 0) {
 
             System.out.println("\nYou have fallen to the Emperor... all hope is lost!");
-        }
 
-        else {
+        } else {
 
             System.out.println("\nYou have vanquished The Emperor! You have restored balance to the force!");
         }

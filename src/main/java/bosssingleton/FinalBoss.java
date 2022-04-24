@@ -2,29 +2,29 @@ package main.java.bosssingleton;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class FinalBos is a singleton design pattern to create just one final
+ * The Class FinalBos is a singleton design pattern to create just one final.
  * boss object
  */
 public class FinalBoss {
 
     /** The hp. */
-    static int HP;
+    static int healthPoints;
 
     /** The damage. */
     static int damage;
 
     /** The instance. */
-    private static FinalBoss instance = new FinalBoss(HP, damage);
+    private static FinalBoss instance = new FinalBoss(healthPoints, damage);
 
     /**
      * Instantiates a new final boss.
      *
-     * @param HP     the hp
-     * @param damage the damage
+     * @param healthPoints the hp
+     * @param damage       the damage
      */
-    private FinalBoss(int HP, int damage) {
+    private FinalBoss(int healthPoints, int damage) {
 
-        FinalBoss.HP = 250;
+        FinalBoss.healthPoints = 250;
         FinalBoss.damage = 60;
     }
 
@@ -52,8 +52,8 @@ public class FinalBoss {
      *
      * @return the hp
      */
-    public static int getHP() {
-        return HP;
+    public static int getHp() {
+        return healthPoints;
     }
 
     /**
