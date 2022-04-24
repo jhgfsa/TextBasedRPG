@@ -109,12 +109,15 @@ public class Gameplay {
                 character.setHp(maxHP);
             }
 
-            int xpRecieved = character.getExp() + enemy.getExp();
+            else {
+                int xpRecieved = character.getExp() + enemy.getExp();
 
-            character.setExp(xpRecieved);
+                character.setExp(xpRecieved);
 
-            System.out.println("\nYou won! You gained " + enemy.getExp() + " experience points");
-            System.out.println("You have " + character.getExp() + " experience points and need " + expNeeded + " experience points to level up!");
+                System.out.println("\nYou won! You gained " + enemy.getExp() + " experience points");
+                System.out.println("You have " + character.getExp() + " experience points and need " + expNeeded + " experience points to level up!");
+
+            }
 
             currentHP = character.getHp();
 
@@ -129,7 +132,8 @@ public class Gameplay {
             if (character.getExp() > expNeeded && floor == 1) {
 
                 expNeeded *= 1.5;
-                newHP = character.getHp() + 25;
+                newHP = character.getHp() + 500;
+                int newDmg = character.getPhysicalDmg() + 50;
 
                 if (character.getRole().equals("Jedi")) {
                     newForce = character.getForce() + 25;
@@ -144,12 +148,13 @@ public class Gameplay {
                 character.setLevel(characterLevel);
                 character.setHp(newHP);
                 character.setForce(newForce);
+                character.setPhysicalDmg(newDmg);
                 character.setSpecialDmg(newSpecialDmg);
                 character.setSpeed(newSpeed);
                 maxHP = character.getHp();
 
-                System.out.println("\n You leveled up! You're now " + characterLevel + " and your new stats are: \n Health: " + newHP + "\n Force:  " + newForce + "\n Special Damage: "
-                                                                                                                                                                                    + newSpecialDmg
+                System.out.println("\n You leveled up! You're now " + characterLevel + " and your new stats are: \n Health: " + newHP + "\n Force:  " + newForce + "\n Physical Damage: "
+                                                                                                                                                                                    + newDmg
                                                                                                                                                                                     + "\n Speed: "
                                                                                                                                                                                     + newSpeed);
 
@@ -197,6 +202,24 @@ public class Gameplay {
         } else {
 
             System.out.println("\nYou have vanquished The Emperor! You have restored balance to the force!");
+
+            System.out.println("\nYou have won! Your final stats were:");
+
+            int healthPoints = character.getHp();
+            int force = character.getForce();
+            int physicalDmg = character.getPhysicalDmg();
+            int specialDmg = character.getSpecialDmg();
+            int speed = character.getSpeed();
+            int level = character.getLevel();
+            int exp = character.getExp();
+
+            System.out.println("Health: " + healthPoints);
+            System.out.println("Force: " + force);
+            System.out.println("Physical Damage: " + physicalDmg);
+            System.out.println("Special Damage: " + specialDmg);
+            System.out.println("Speed: " + speed);
+            System.out.println("Level: " + level);
+            System.out.println("Experience: " + exp);
         }
     }
 
