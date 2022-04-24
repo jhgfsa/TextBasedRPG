@@ -16,6 +16,7 @@ public class Main {
         System.out.println("Welcome to STAR WARS");
         System.out.println("Building your character...");
 
+        // shows the character builder
         Character character = Generation.generateCharacter();
 
         // character health is set to 5000 just for the assignment run as otherwise it
@@ -25,6 +26,11 @@ public class Main {
         // get sent to floor 1 under 15% health/die and go to floor 1 to -level up
         character.setHP(5000);
 
+        // Sometimes the program randomly stops, it doesn't terminate but gets "stuck."
+        // If this happens terminate and run it again until it works please
+        // I included a screenshot of a successful run and the last line in the document
+        // playing this uses the final boss singleton design pattern and the enemy
+        // builder
         Gameplay.play(character);
 
     }
