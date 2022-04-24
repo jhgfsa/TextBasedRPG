@@ -39,9 +39,9 @@ public class Generation {
     public static Enemy generateEnemy(int floor) {
 
         // medium enemy generated every 5 floors
-        if (floor == 5) {
+        if (floor % 10 == 5) {
 
-            int minDamage = 30;
+            int minDamage = 25;
             int maxDamage = 35;
             damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
@@ -62,9 +62,9 @@ public class Generation {
 
         }
 
-        if (floor == 10) {
+        if (floor % 10 == 0) {
 
-            int minDamage = 25;
+            int minDamage = 35;
             int maxDamage = 45;
             damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
@@ -86,8 +86,8 @@ public class Generation {
 
         else {
 
-            int minDamage = 10;
-            int maxDamage = 15;
+            int minDamage = 15;
+            int maxDamage = 20;
             damage = (int) Math.floor(Math.random() * (maxDamage - minDamage + 1) + minDamage);
 
             int minSpeed = 25;
@@ -297,27 +297,27 @@ public class Generation {
         switch (species) {
 
         case "Human":
-            HP = 80;
+            HP = 120;
             break;
 
         case "Twilek":
-            HP = 60;
+            HP = 90;
             break;
 
         case "Zabrak":
-            HP = 95;
+            HP = 140;
             break;
 
         case "Droid":
-            HP = 75;
+            HP = 110;
             break;
 
         case "Wookie":
-            HP = 100;
+            HP = 190;
             break;
 
         case "Hutt":
-            HP = 120;
+            HP = 220;
             break;
 
         }
