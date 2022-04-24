@@ -37,6 +37,8 @@ public class Gameplay {
     /** The max HP. */
     private static int maxHP;
 
+    private static int newDmg;
+
     /**
      * Performs the main gameplay sequence with generating enemies and battling
      * them.
@@ -107,9 +109,8 @@ public class Gameplay {
                 System.out.println("\nYou knocked each other out! Before he rises, you sneak back to the 1st floor");
                 floor = 1;
                 character.setHp(maxHP);
-            }
 
-            else {
+            } else {
                 int xpRecieved = character.getExp() + enemy.getExp();
 
                 character.setExp(xpRecieved);
@@ -133,7 +134,7 @@ public class Gameplay {
 
                 expNeeded *= 1.5;
                 newHP = character.getHp() + 500;
-                int newDmg = character.getPhysicalDmg() + 50;
+                newDmg = character.getPhysicalDmg() + 50;
 
                 if (character.getRole().equals("Jedi")) {
                     newForce = character.getForce() + 25;
