@@ -1,31 +1,28 @@
 package main.java;
 
-import characterbuilder.java.Character;
-import enemyfactory.java.Enemy;
+import main.java.characterbuilder.Character;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Main.
+ */
 public class Main {
 
-    static boolean NakedCharacter;
-    static boolean CharacterJedi;
-    static String helmet;
-    static String armor;
-    static String pants;
-    static String boots;
-    static int floor = 1;
-
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     */
     public static void main(String[] args) {
         System.out.println("Welcome to STAR WARS");
-        System.out.println("Building your character...");
+        System.out.println("\nBuilding your character...");
 
+        // shows the character builder
         Character character = Generation.generateCharacter();
 
-        System.out.println("\n\nNow entering the Imperial Citadel, Floor 1...");
-
-        Enemy enemy = Generation.generateEnemy(floor);
-
-        String test = enemy.getName();
-
-        System.out.println("You enter floor " + floor + " and encounter " + test + "!");
+        // playing this uses the final boss singleton design pattern and the enemy
+        // builder
+        Gameplay.play(character);
 
     }
 }
