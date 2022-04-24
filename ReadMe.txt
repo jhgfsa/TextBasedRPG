@@ -10,7 +10,7 @@ since our main character will be constantly changing stats, gold, etc, so it wou
 These are just some rough ideas that I will iron out and decide on. 
 
 
-Assignment5B
+%Assignment5B%
 My first design pattern is a Builder pattern focusing on making the Characters that play the game. This builder is used to make character objects that 
 dont always require every initiazation variable.
 With my CharacterBuilder and related classes, I fulfilled the following requirements:
