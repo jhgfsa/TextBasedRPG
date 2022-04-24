@@ -1,4 +1,4 @@
-package enemyfactory.java;
+package main.java.enemyfactory;
 
 public class SmallEnemy extends Enemy {
 

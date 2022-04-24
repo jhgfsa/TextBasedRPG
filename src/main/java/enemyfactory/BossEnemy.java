@@ -1,6 +1,6 @@
-package enemyfactory.java;
+package main.java.enemyfactory;
 
-public class MediumEnemy extends Enemy {
+public class BossEnemy extends Enemy {
 
     String name;
 
@@ -12,11 +12,9 @@ public class MediumEnemy extends Enemy {
     int exp;
     int credits;
 
-    public MediumEnemy(String name, int physicalDmg, int specialDmg, int HP, int force, int speed, int exp,
-            int credits) {
+    public BossEnemy(String name, int physicalDmg, int specialDmg, int HP, int force, int speed, int exp, int credits) {
 
         this.name = name;
-
         this.physicalDmg = physicalDmg;
         this.specialDmg = specialDmg;
         this.HP = HP;

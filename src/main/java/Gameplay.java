@@ -1,7 +1,7 @@
 package main.java;
 
-import bosssingleton.java.FinalBoss;
-import enemyfactory.java.Enemy;
+import main.java.bosssingleton.FinalBoss;
+import main.java.enemyfactory.Enemy;
 
 public class Gameplay {
 
@@ -16,7 +16,7 @@ public class Gameplay {
     private static int currentHP;
     private static int maxHP;
 
-    public static void play(characterbuilder.java.Character character) {
+    public static void play(main.java.characterbuilder.Character character) {
 
         maxHP = character.getHP();
 

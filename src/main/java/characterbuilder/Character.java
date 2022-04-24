@@ -1,4 +1,4 @@
-package characterbuilder.java;
+package main.java.characterbuilder;
 
 public class Character {
 

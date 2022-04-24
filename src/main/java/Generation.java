@@ -2,9 +2,9 @@ package main.java;
 
 import java.util.Random;
 
-import characterbuilder.java.Character;
-import enemyfactory.java.Enemy;
-import enemyfactory.java.EnemyFactory;
+import main.java.characterbuilder.Character;
+import main.java.enemyfactory.Enemy;
+import main.java.enemyfactory.EnemyFactory;
 
 public class Generation {
 
