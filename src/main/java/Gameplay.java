@@ -6,7 +6,7 @@ import main.java.enemyfactory.Enemy;
 public class Gameplay {
 
     static int floor = 1;
-    static int remainingPlayerHealth;
+
     private static int expNeeded = 100;
     private static int characterLevel = 1;
     private static int newHP;
@@ -34,29 +34,33 @@ public class Gameplay {
 
             while (character.getHP() > 0 && remainingEnemyHealth > 0) {
 
-                if (character.getSpeed() > enemy.getSpeed()) {
+                if (character.getSpeed() >= enemy.getSpeed()) {
 
                     remainingEnemyHealth = remainingEnemyHealth - character.getPhysicalDmg();
                     System.out.println("You attacked " + enemy.getName() + " for " + character.getPhysicalDmg()
                             + " damage! They now have " + remainingEnemyHealth + " health left!");
 
-                    int remainingPlayerHealth = character.getHP() - enemy.getPhysicalDmg() - floor / 2;
+                    int remainingPlayerHealth = character.getHP() - enemy.getPhysicalDmg();
+                    remainingPlayerHealth = remainingPlayerHealth - character.getLevel() / 2;
+                    int bossDamage = enemy.getPhysicalDmg() + character.getLevel() / 2;
 
                     character.setHP(remainingPlayerHealth);
 
-                    System.out.println(enemy.getName() + " attacked you for " + enemy.getPhysicalDmg()
-                            + " damage and you now have " + character.getHP() + " health remaining!");
+                    System.out.println(enemy.getName() + " attacked you for " + bossDamage + " damage and you now have "
+                            + character.getHP() + " health remaining!");
 
                 }
 
-                if (character.getSpeed() < enemy.getSpeed()) {
+                if (character.getSpeed() <= enemy.getSpeed()) {
 
-                    remainingPlayerHealth = character.getHP() - enemy.getPhysicalDmg() - floor / 2;
+                    int remainingPlayerHealth = character.getHP() - enemy.getPhysicalDmg();
+                    remainingPlayerHealth = remainingPlayerHealth - character.getLevel() / 2;
+                    int bossDamage = enemy.getPhysicalDmg() + character.getLevel() / 2;
 
                     character.setHP(remainingPlayerHealth);
 
-                    System.out.println(enemy.getName() + " attacked you for " + enemy.getPhysicalDmg()
-                            + " and you now have " + character.getHP() + " health remaining!");
+                    System.out.println(enemy.getName() + " attacked you for " + bossDamage + " and you now have "
+                            + character.getHP() + " health remaining!");
 
                     remainingEnemyHealth = remainingEnemyHealth - character.getPhysicalDmg();
                     System.out.println("You attacked " + enemy.getName() + " for " + character.getPhysicalDmg()
@@ -150,11 +154,12 @@ public class Gameplay {
 
             while (character.getHP() > 0 && finalBossRemainingHealth > 0) {
 
-                int remainingPlayerHealth = character.getHP() - FinalBoss.getDamage();
+                int remainingPlayerHealth = character.getHP() - FinalBoss.getDamage() - character.getLevel() / 2;
+                int bossDamage = FinalBoss.getDamage() + character.getLevel() / 2;
 
                 character.setHP(remainingPlayerHealth);
 
-                System.out.println("\nThe Emperor attacks you for " + FinalBoss.getDamage() + " damage and you have "
+                System.out.println("\nThe Emperor attacks you for " + bossDamage + " damage and you have "
                         + character.getHP() + " health left.");
 
                 finalBossRemainingHealth = finalBossRemainingHealth - character.getPhysicalDmg();

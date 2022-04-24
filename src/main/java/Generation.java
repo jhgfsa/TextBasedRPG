@@ -11,10 +11,13 @@ public class Generation {
     static String[] speciesList = { "Human", "Twilek", "Zabrak", "Droid", "Wookie", "Hutt" };
     static String[] roleList = { "Jedi", "Trooper", "Sniper", "Bounty Hunter", "Gunslinger" };
     static String[] statusList = { "Blind", "Foolhardy", "Tough", "Diseased", "Lucky", "Quick" };
-    static String[] smallEnemyList = { "Battle Droid", "Stormtrooper", "K'lor'slug", "Jawa" };
-    static String[] mediumEnemyList = { "Droideka", "Stormtrooper Captain", "Sith Trooper", "Imperial Guard" };
-    static String[] bossEnemyList = { "Darth Maul", "Darth Vader", "Darth Sidious", "Boba Fett", "Count Dooku",
-            "General Grevious", "Ventress" };
+    static String[] smallEnemyList = { "Battle Droid", "Stormtrooper", "K'lor'slug", "Jawa", "Assassin Droid",
+            "Stormtrooper Sniper", "B2 Battle Droid", "Gundark", "Colicoid" };
+    static String[] mediumEnemyList = { "Droideka", "Stormtrooper Captain", "Sith Trooper", "Imperial Guard",
+            "Dark Trooper", "B3 Battle Droid", "Droid Tank", };
+    static String[] bossEnemyList = { "Darth Maul", "Darth Vader", "Boba Fett", "Count Dooku", "General Grevious",
+            "Ventress", "Tarkin", "IG-88", "Grand Admiral Thrawn" };
+
     String result;
     static boolean NakedCharacter;
     static boolean CharacterJedi;
