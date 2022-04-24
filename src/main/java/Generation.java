@@ -6,38 +6,94 @@ import main.java.characterbuilder.Character;
 import main.java.enemyfactory.Enemy;
 import main.java.enemyfactory.EnemyFactory;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The generation class is used to generate values for the character and the
+ * enemy.
+ */
 public class Generation {
 
+    /** The species list. */
     static String[] speciesList = { "Human", "Twilek", "Zabrak", "Droid", "Wookie", "Hutt" };
+
+    /** The role list. */
     static String[] roleList = { "Jedi", "Trooper", "Sniper", "Bounty Hunter", "Gunslinger" };
+
+    /** The status list. */
     static String[] statusList = { "Blind", "Foolhardy", "Tough", "Diseased", "Lucky", "Quick" };
+
+    /** The small enemy list. */
     static String[] smallEnemyList = { "Battle Droid", "Stormtrooper", "K'lor'slug", "Jawa", "Assassin Droid",
             "Stormtrooper Sniper", "B2 Battle Droid", "Gundark", "Colicoid" };
+
+    /** The medium enemy list. */
     static String[] mediumEnemyList = { "Droideka", "Stormtrooper Captain", "Sith Trooper", "Imperial Guard",
             "Dark Trooper", "B3 Battle Droid", "Droid Tank", };
+
+    /** The boss enemy list. */
     static String[] bossEnemyList = { "Darth Maul", "Darth Vader", "Boba Fett", "Count Dooku", "General Grevious",
             "Ventress", "Tarkin", "IG-88", "Grand Admiral Thrawn" };
 
+    /** The Naked character. */
     static boolean NakedCharacter;
+
+    /** The Character jedi. */
     static boolean CharacterJedi;
+
+    /** The helmet. */
     static String helmet;
+
+    /** The armor. */
     static String armor;
+
+    /** The pants. */
     static String pants;
+
+    /** The boots. */
     static String boots;
+
+    /** The credits. */
     private static int credits = 0;
+
+    /** The level. */
     private static int level = 1;
+
+    /** The exp. */
     private static int exp = 0;
+
+    /** The damage. */
     private static int damage;
+
+    /** The Constant smallEnemyHealth. */
     private final static int smallEnemyHealth = 30;
+
+    /** The Constant mediumEnemyHealth. */
     private final static int mediumEnemyHealth = 60;
+
+    /** The Constant bossEnemyHealth. */
     private final static int bossEnemyHealth = 90;
+
+    /** The Constant smallExp. */
     private final static int smallExp = 25;
+
+    /** The Constant mediumExp. */
     private final static int mediumExp = 50;
+
+    /** The Constant bossExp. */
     private final static int bossExp = 100;
+
+    /** The force. */
     private static int force = 0;
 
+    /** The r. */
     static Random r = new Random();
 
+    /**
+     * Generate enemy.
+     *
+     * @param floor the floor
+     * @return the enemy
+     */
     public static Enemy generateEnemy(int floor) {
 
         // medium enemy generated every 5 floors
@@ -111,6 +167,11 @@ public class Generation {
 
     }
 
+    /**
+     * Generate character.
+     *
+     * @return the character
+     */
     public static Character generateCharacter() {
 
         String species = Generation.generateSpecies();
@@ -193,6 +254,11 @@ public class Generation {
 
     }
 
+    /**
+     * Generate species.
+     *
+     * @return the string
+     */
     public static String generateSpecies() {
 
         String result = speciesList[r.nextInt(speciesList.length)];
@@ -201,6 +267,11 @@ public class Generation {
 
     }
 
+    /**
+     * Generate role.
+     *
+     * @return the string
+     */
     public static String generateRole() {
 
         String result = roleList[r.nextInt(roleList.length)];
@@ -209,6 +280,12 @@ public class Generation {
 
     }
 
+    /**
+     * Generate weapon.
+     *
+     * @param role the role
+     * @return the string
+     */
     public static String generateWeapon(String role) {
 
         String weapon = "none";
@@ -243,6 +320,13 @@ public class Generation {
         return weapon;
     }
 
+    /**
+     * Generate equipment.
+     *
+     * @param species the species
+     * @param role    the role
+     * @return the string
+     */
     public static String generateEquipment(String species, String role) {
 
         String SP = species;
@@ -295,6 +379,12 @@ public class Generation {
 
     }
 
+    /**
+     * Generate HP.
+     *
+     * @param species the species
+     * @return the int
+     */
     public static int generateHP(String species) {
 
         int HP = 0;
@@ -333,6 +423,12 @@ public class Generation {
         return HP;
     }
 
+    /**
+     * Generate force.
+     *
+     * @param role the role
+     * @return the int
+     */
     public static int generateForce(String role) {
 
         int min = 50;
@@ -348,6 +444,11 @@ public class Generation {
 
     }
 
+    /**
+     * Generate physical dmg.
+     *
+     * @return the int
+     */
     public static int generatePhysicalDmg() {
 
         int min = 25;
@@ -359,6 +460,12 @@ public class Generation {
 
     }
 
+    /**
+     * Generate special dmg.
+     *
+     * @param role the role
+     * @return the int
+     */
     public static int generateSpecialDmg(String role) {
 
         if (role.equals("Jedi")) {
@@ -376,6 +483,12 @@ public class Generation {
 
     }
 
+    /**
+     * Generate speed.
+     *
+     * @param species the species
+     * @return the int
+     */
     public static int generateSpeed(String species) {
         int speed = 0;
 
@@ -413,6 +526,11 @@ public class Generation {
         return speed;
     }
 
+    /**
+     * Generate status.
+     *
+     * @return the string
+     */
     public static String generateStatus() {
 
         String result = statusList[r.nextInt(statusList.length)];

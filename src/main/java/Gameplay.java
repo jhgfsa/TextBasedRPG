@@ -3,19 +3,47 @@ package main.java;
 import main.java.bosssingleton.FinalBoss;
 import main.java.enemyfactory.Enemy;
 
+// 
+/**
+ * The Class Gameplay contains the play method which is the main game flow of
+ * this project
+ */
 public class Gameplay {
 
+    /** The floor. */
     static int floor = 1;
 
+    /** The exp needed. */
     private static int expNeeded = 100;
+
+    /** The character level. */
     private static int characterLevel = 1;
+
+    /** The new HP. */
     private static int newHP;
+
+    /** The new force. */
     private static int newForce;
+
+    /** The new special dmg. */
     private static int newSpecialDmg;
+
+    /** The new speed. */
     private static int newSpeed;
+
+    /** The current HP. */
     private static int currentHP;
+
+    /** The max HP. */
     private static int maxHP;
 
+    /**
+     * Performs the main gameplay sequence with generating enemies and battling
+     * them.
+     *
+     * @param character the character
+     * @return void
+     */
     public static void play(main.java.characterbuilder.Character character) {
 
         maxHP = character.getHP();
@@ -85,9 +113,9 @@ public class Gameplay {
                 character.setHP(maxHP);
             }
 
-            int XPRecieved = character.getExp() + enemy.getExp();
+            int xpRecieved = character.getExp() + enemy.getExp();
 
-            character.setExp(XPRecieved);
+            character.setExp(xpRecieved);
 
             System.out.println("\nYou won! You gained " + enemy.getExp() + " experience points");
             System.out.println("You have " + character.getExp() + " experience points and need " + expNeeded
