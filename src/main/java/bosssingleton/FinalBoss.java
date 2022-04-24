@@ -1,4 +1,4 @@
-package bosssingleton.java;
+package main.java.bosssingleton;
 
 public class FinalBoss {
 

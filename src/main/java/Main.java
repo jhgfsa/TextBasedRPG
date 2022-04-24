@@ -1,6 +1,6 @@
 package main.java;
 
-import characterbuilder.java.Character;
+import main.java.characterbuilder.Character;
 
 public class Main {
 
@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Welcome to STAR WARS");
-        System.out.println("Building your character...");
+        System.out.println("\nBuilding your character...");
 
         // shows the character builder
         Character character = Generation.generateCharacter();
